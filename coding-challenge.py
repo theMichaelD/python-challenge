@@ -1,5 +1,10 @@
 import json
 
+# My focus here was to create an applicatins that would load the employees into a class structure and a tree. 
+# Allows for the applicatins to easily be modified to add new features.
+# Runs efficently: all the steps run in O(n) time. So the applicatins should run equally well in an input with 100,000 employees.
+# Employee class could be used as a library for other applicatins.
+
 class Employee:
     def __init__(self, id, first_name, salary, manager):
         self._id=id
@@ -98,7 +103,7 @@ def main():
 
     tree_root = build_employee_tree(employee_dict)
 
-    print('%s' % tree_root.first_name)
+    print('%s' % tree_root.first_name) # This line is necessary because the owner does not follow the same pattern
     print_employee_tree(tree_root, 0)
 
     print_total_salary(employee_dict)
